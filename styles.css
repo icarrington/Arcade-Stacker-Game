@@ -1,0 +1,42 @@
+:root {
+  --game-screen: rgba(11, 45, 85, 0.363);
+  --tile-border: rgb(13, 139, 180);
+  --glow: rgb(194, 245, 247);
+}
+
+body {
+  background-color: #000000;
+}
+
+@media (max-width: 425px) {
+  div#game {
+    max-width: 85%;
+    max-height: 68vh;
+    background-color: var(--game-screen);
+  }
+}
+
+div#game {
+  max-width: 500px;
+  height: 720px;
+  background-color: var(--game-screen);
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border: var(--tile-border) solid 1px;
+}
+
+.space {
+  border: var(--tile-border) solid 1px;
+}
+
+.glow {
+  background-color: var(--glow);
+}
