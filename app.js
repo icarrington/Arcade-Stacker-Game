@@ -2,7 +2,7 @@ let currentRowNumber = 1;
 let currentRow = document.getElementById(`row${currentRowNumber}`);
 
 let chainLength = 4;
-let displacement = 0;
+let displacement = 0; //displacement is where the chain of glowing blocks starts. Even though it is 0, the chain starts in the middle at the 4th block from the left.
 let direction = 'right';
 
 let score = 0;
@@ -53,7 +53,7 @@ let move = setInterval(moveChain, timeBetweenTicks);
 //lowerRowIndex is the ending displacement of the row below.
 let lowerRowIndex;
 
-//trimChain trims the overhannging blocks in the current chain.
+//trimChain trims the overhanging blocks in the current chain.
 function trimChain() {
   //overhangSide specifies which side the chain of blocks hangs over.
   let overhangSide;
