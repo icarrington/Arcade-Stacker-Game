@@ -67,16 +67,18 @@ function trimChain() {
     chainLength = chainLength - (displacement - lowerRowIndex);    
   }
   
+  //spaces is the list of all the spaces in the current row
   let spaces = currentRow.querySelectorAll('.space');
-  
-  let start = 4 + (displacement);
-  let pos = 4 + (lowerRowIndex);
+
+  //start and pos go from 0 to 11 to match the index of spaces
+  let start = 4 + (displacement); //start is the index where the current row's chain starts
+  let pos = 4 + (lowerRowIndex); //pos is the index the lower row's chain starts
   overhang = start - pos || 0;
   
   if (overhangSide == 'left') {
 
     for (let i = 0; i < spaces.length; i++) {
-      if (i < pos + 4 - chainLength) {
+      if (i < pos - overhang) { 
         spaces[i].classList.remove('glow');
       }
     }
